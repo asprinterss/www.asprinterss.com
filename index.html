@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AS Printers — premium printing and creative design.">
+<title>AS Printers | From Pixels to Paper</title>
+<style>
+:root{--navy:#07111f;--navy2:#0c1a2c;--gold:#d9a441;--gold2:#f3d48a;--cream:#f7f1e7;--muted:#aab5c5}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(217,164,65,.18)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px;padding:8px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.7px}.brand img{width:58px;height:46px;object-fit:contain;object-position:center;background:var(--cream);padding:4px 6px;border:1px solid rgba(217,164,65,.8);border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.22);display:block}.brand span{font-family:Georgia,serif;font-size:19px}
+nav{display:flex;gap:clamp(14px,2.5vw,25px);align-items:center}nav a{font-size:14px;color:#dbe3ee;transition:.25s}nav a:hover{color:var(--gold2)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:800}.nav-cta{background:var(--gold);color:#101722}.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:100vh;display:grid;place-items:center;position:relative;padding:125px 0 70px;background:radial-gradient(circle at 82% 22%,rgba(217,164,65,.17),transparent 27%),radial-gradient(circle at 10% 80%,rgba(42,91,140,.18),transparent 30%),linear-gradient(135deg,#06101d,#0c1a2c 60%,#08111e)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#000,transparent)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,55px);align-items:center}.eyebrow,.kicker{color:var(--gold2);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:12px}.eyebrow{margin-bottom:18px}
+h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,82px);line-height:.95;margin-bottom:22px}h1 em{color:var(--gold2);font-style:normal}.hero p{color:#c6d0dd;max-width:600px;font-size:18px;line-height:1.7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn-primary{background:var(--gold);color:#101722}.btn-secondary{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05)}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.hero-art{position:relative}.hero-card{border-radius:26px;overflow:hidden;border:1px solid rgba(217,164,65,.35);box-shadow:0 35px 80px rgba(0,0,0,.45);transform:rotate(1.5deg);animation:float 5s ease-in-out infinite}.hero-card img{width:100%;height:auto;display:block}.orb{position:absolute;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,var(--gold2),transparent 68%);filter:blur(22px);opacity:.22;right:-35px;top:-35px;animation:pulse 4s infinite}
+section{padding:100px 0}.section-head{text-align:center;max-width:720px;margin:0 auto 48px}.section-head h2{font-family:Georgia,serif;font-size:clamp(35px,5vw,56px);margin:10px 0 15px}.section-head p{color:var(--muted);line-height:1.7}
+.services{background:var(--cream);color:#101722}.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.service{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #eadfcd;box-shadow:0 12px 35px rgba(18,25,35,.09);transition:.35s}.service:hover{transform:translateY(-9px);box-shadow:0 25px 55px rgba(18,25,35,.16)}.service img{width:100%;height:260px;object-fit:cover;object-position:center;display:block}.service-body{padding:21px}.service h3{font-family:Georgia,serif;font-size:22px;margin-bottom:8px}.service p{font-size:14px;line-height:1.65;color:#667080}.tag{display:inline-block;margin-top:14px;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#93691e}
+.showcase{background:#091525}.slider-wrap{position:relative;overflow:hidden;border-radius:28px}.slider{display:flex;transition:transform .65s cubic-bezier(.2,.8,.2,1)}.slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;background:#101d2e}.slide img{width:100%;height:clamp(300px,42vw,500px);object-fit:cover;object-position:center}.slide-copy{padding:55px;display:flex;flex-direction:column;justify-content:center}.slide-copy h3{font-family:Georgia,serif;font-size:42px;margin:12px 0}.slide-copy p{color:#b9c5d4;line-height:1.8}.slider-controls{display:flex;justify-content:center;gap:10px;margin-top:18px}.dot{width:10px;height:10px;border-radius:50%;border:0;background:#526071;cursor:pointer}.dot.active{background:var(--gold)}
+.about{background:var(--cream);color:#111a27}.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,55px);align-items:center}.about img{width:100%;height:auto;display:block;border-radius:28px;box-shadow:0 25px 60px rgba(0,0,0,.18)}.about h2{font-family:Georgia,serif;font-size:clamp(35px,5vw,56px);margin:10px 0 15px}.about p{color:#5c6674;line-height:1.8;margin-bottom:16px}.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.point{padding:15px;border-radius:14px;background:#fff;border:1px solid #e9dfcf;font-weight:800}.point span{color:#a97821;margin-right:7px}
+.contact{background:linear-gradient(135deg,#0a1728,#111e30);text-align:center}.contact-box{border:1px solid rgba(217,164,65,.3);background:linear-gradient(135deg,rgba(217,164,65,.09),rgba(255,255,255,.03));padding:55px 25px;border-radius:30px}.contact-box h2{font-family:Georgia,serif;font-size:clamp(35px,5vw,56px);margin:10px 0 15px}.contact-box p{color:#bac5d4;margin:0 auto 25px;max-width:600px;line-height:1.7}.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{padding:28px 0;color:#8491a3;text-align:center;border-top:1px solid rgba(255,255,255,.08);font-size:13px}.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}.reveal.show{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:rotate(1.5deg) translateY(0)}50%{transform:rotate(0deg) translateY(-12px)}}@keyframes pulse{50%{transform:scale(1.25);opacity:.35}}
+@media(max-width:1020px){nav{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#07111f;flex-direction:column;border-bottom:1px solid rgba(217,164,65,.2)}nav.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-grid{max-width:760px;margin:auto}.hero{padding-top:115px}.hero-art{max-width:700px;margin:auto}.service-grid{grid-template-columns:repeat(2,1fr)}.slide{grid-template-columns:1fr}.slide img{height:360px}.slide-copy{padding:35px}}
+@media(max-width:640px){.nav{min-height:68px}.brand img{width:52px;height:42px}.brand span{font-size:16px}.hero{padding-top:105px}.hero p{font-size:16px}.actions{width:100%}.actions .btn{width:100%}.service-grid{grid-template-columns:1fr}.service img{height:300px}.points{grid-template-columns:1fr}.slide-copy h3{font-size:32px}.contact-box{padding:38px 18px}section{padding:75px 0}h1{font-size:52px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#home"><img src="assets/logo.png" alt="AS Printers logo"><span>AS PRINTERS</span></a>
+<button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav><a href="#home">Home</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<a class="nav-cta" href="https://wa.me/923379263191?text=Hello%20AS%20Printers%2C%20I%20want%20to%20place%20an%20order.">WhatsApp Us</a>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="reveal"><div class="eyebrow">Premium Printing & Creative Design</div><h1>From pixels to <em>paper</em>,<br>pure brilliance.</h1><p>Make your brand unforgettable with professionally designed and printed visiting cards, wedding invitations, brochures, bill books and custom creative work.</p><div class="actions"><a class="btn btn-primary" href="#services">Explore Services →</a><a class="btn btn-secondary" href="https://wa.me/923379263191?text=Hello%20AS%20Printers%2C%20please%20share%20your%20printing%20catalogue.">Get a Quote</a></div></div>
+<div class="hero-art reveal"><div class="orb"></div><div class="hero-card"><img src="assets/brochure.png" alt="AS Printers promotional brochure"></div></div>
+</div></section>
+
+<section class="services" id="services"><div class="container">
+<div class="section-head reveal"><div class="kicker">What We Do</div><h2>Our Services</h2><p>Professional design and printing made to look sharp, feel premium and help your business stand out.</p></div>
+<div class="service-grid">
+<article class="service reveal"><img src="assets/visiting-cards.png" alt="Printed visiting cards"><div class="service-body"><h3>Visiting Cards</h3><p>Premium business cards with clean layouts, luxury finishes and strong brand presentation.</p><span class="tag">Business Printing</span></div></article>
+<article class="service reveal"><img src="assets/wedding-cards.png" alt="Wedding invitation cards"><div class="service-body"><h3>Wedding Cards</h3><p>Elegant invitation designs for weddings, Walima, engagements and special occasions.</p><span class="tag">Wedding Stationery</span></div></article>
+<article class="service reveal"><img src="assets/brochure.png" alt="Printed brochure"><div class="service-body"><h3>Brochures</h3><p>Eye-catching brochures and promotional material designed to turn attention into customers.</p><span class="tag">Marketing Print</span></div></article>
+<article class="service reveal"><img src="assets/bill-books.png" alt="Printed bill book"><div class="service-body"><h3>Bill Books</h3><p>Professional duplicate and numbered bill books with clean forms and durable binding.</p><span class="tag">Office Printing</span></div></article>
+</div></div></section>
+
+<section class="showcase" id="work"><div class="container">
+<div class="section-head reveal"><div class="kicker">Selected Work</div><h2>Printed to Impress</h2><p>Swipe through a few examples of our work. The slider changes automatically.</p></div>
+<div class="slider-wrap reveal"><div class="slider" id="slider">
+<div class="slide"><img src="assets/visiting-cards.png" alt="Visiting card project"><div class="slide-copy"><div class="kicker">01 / Business Identity</div><h3>Visiting Cards</h3><p>Sharp typography, premium dark tones and gold accents create a memorable first impression for your business.</p></div></div>
+<div class="slide"><img src="assets/wedding-cards.png" alt="Wedding card project"><div class="slide-copy"><div class="kicker">02 / Wedding Stationery</div><h3>Wedding Invitations</h3><p>Beautiful floral layouts and refined details for invitations that feel as special as the event itself.</p></div></div>
+<div class="slide"><img src="assets/bill-books.png" alt="Bill book project"><div class="slide-copy"><div class="kicker">03 / Business Essentials</div><h3>Bill Books</h3><p>Clear, practical and professionally branded bill books for shops, offices and businesses.</p></div></div>
+<div class="slide"><img src="assets/brochure.png" alt="Brochure project"><div class="slide-copy"><div class="kicker">04 / Marketing Print</div><h3>Brochures</h3><p>Promotional print that combines strong visuals with clear information to present your business professionally.</p></div></div>
+</div></div><div class="slider-controls" id="dots"></div>
+</div></section>
+
+<section class="about" id="about"><div class="container about-grid">
+<div class="reveal"><img src="assets/brochure.png" alt="AS Printers portfolio"></div>
+<div class="reveal"><div class="kicker">Why AS Printers</div><h2>Design that gets noticed.</h2><p>We combine creative design with quality printing to give businesses and families polished, ready-to-use printed material.</p><p>Whether you need a single design or a complete printed set, we focus on presentation, clarity and premium finishing.</p><div class="points"><div class="point"><span>✦</span>Creative Design</div><div class="point"><span>✦</span>Quality Printing</div><div class="point"><span>✦</span>Premium Finish</div><div class="point"><span>✦</span>Customer Focus</div></div></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container"><div class="contact-box reveal"><div class="kicker">Let's Create Something Great</div><h2>Ready to print?</h2><p>Send us your idea, design or requirements and we'll help turn it into professional printed material.</p>
+<div class="contact-links"><a class="btn btn-primary" href="https://wa.me/923379263191?text=Hello%20AS%20Printers%2C%20I%20would%20like%20a%20quote.">WhatsApp: 0337 9263191</a><a class="btn btn-secondary" href="https://instagram.com/as_printers.01" target="_blank" rel="noopener">Instagram: @as_printers.01</a><a class="btn btn-secondary" href="https://facebook.com/" target="_blank" rel="noopener">Facebook: AS Printers</a></div>
+</div></div></section>
+</main>
+<footer>© 2026 AS Printers · From pixels to paper, pure brilliance.</footer>
+
+<script>
+const slider=document.getElementById('slider'),slides=[...slider.children],dots=document.getElementById('dots');let index=0,timer;
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className='dot'+(i===0?' active':'');b.setAttribute('aria-label','Show slide '+(i+1));b.onclick=()=>go(i);dots.appendChild(b)});
+function go(i){index=(i+slides.length)%slides.length;slider.style.transform=`translateX(-${index*100}%)`;[...dots.children].forEach((d,j)=>d.classList.toggle('active',j===index))}
+function start(){timer=setInterval(()=>go(index+1),4500)}function stop(){clearInterval(timer)}start();slider.parentElement.addEventListener('mouseenter',stop);slider.parentElement.addEventListener('mouseleave',start);
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+let startX=0;slider.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});slider.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)go(index+(dx<0?1:-1))},{passive:true});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body></html>
